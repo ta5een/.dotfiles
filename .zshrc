@@ -133,3 +133,6 @@ prompt_end() {
 }
 
 source "$HOME/.docker/init-zsh.sh" || true # Added by Docker Desktop
+
+# Add "dotfiles" alias
+alias dotfiles='/usr/local/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
