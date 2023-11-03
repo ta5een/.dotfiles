@@ -1,0 +1,17 @@
+[user]
+	name = Ta-Seen Islam
+	email = taseen00.islam@gmail.com
+[core]
+	editor = nvim
+[init]
+	defaultBranch = main
+[pull]
+	ff = only
+[commit]
+	gpgsign = true
+
+# The contents of this file are included only for GitLab.com URLs
+[includeIf "hasconfig:remote.*.url:https://code.research.uts.edu.au/**"]
+
+# Edit this line to point to your alternate configuration file
+path = ~/.gitconfig-uts
