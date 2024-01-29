@@ -33,8 +33,14 @@ yabai -m mouse_drop_action swap
 # Disable specific apps
 yabai -m rule --add app="^Finder$" manage=off
 yabai -m rule --add app="^Activity Monitor$" manage=off
+yabai -m rule --add app="^AppCleaner$" manage=off
 yabai -m rule --add app="^Calculator$" manage=off
 yabai -m rule --add app="^Calendar$" manage=off
+yabai -m rule --add app="^ExpressVPN$" manage=off
+yabai -m rule --add app="^Installer$" manage=off
+yabai -m rule --add app="^Keychain Access$" manage=off
 yabai -m rule --add app="^Music$" manage=off
+yabai -m rule --add app="^OpenVPN Connect$" manage=off
+yabai -m rule --add app="^Password Boss$" manage=off
 yabai -m rule --add app="^QuickTime Player$" manage=off
-yabai -m rule --add app="^System Preferences$" manage=off
+yabai -m rule --add app="^System Settings$" manage=off
