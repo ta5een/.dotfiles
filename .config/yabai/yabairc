@@ -32,6 +32,7 @@ yabai -m mouse_drop_action swap
 
 # Disable specific apps
 yabai -m rule --add app="^Finder$" manage=off
+yabai -m rule --add app="^Anki$" manage=off
 yabai -m rule --add app="^Activity Monitor$" manage=off
 yabai -m rule --add app="^AppCleaner$" manage=off
 yabai -m rule --add app="^Calculator$" manage=off
