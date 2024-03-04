@@ -59,7 +59,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git macos zsh-syntax-highlighting)
+plugins=(git macos zsh-syntax-highlighting zsh-defer vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -79,31 +79,7 @@ eval "$(fnm env --use-on-cd)"
 export PNPM_HOME="$HOME/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 
-# jENV
-eval export PATH="$HOME/.jenv/shims:${PATH}"
-export JENV_SHELL=zsh
-export JENV_LOADED=1
-unset JAVA_HOME
-unset JDK_HOME
-source '/usr/local/Cellar/jenv/0.5.6/libexec/libexec/../completions/jenv.zsh'
-jenv rehash 2>/dev/null
-jenv refresh-plugins
-source "$HOME/.jenv/plugins/export/etc/jenv.d/init/export_jenv_hook.zsh"
-jenv() {
-  type typeset &> /dev/null && typeset command
-  command="$1"
-  if [ "$#" -gt 0 ]; then
-    shift
-  fi
-
-  case "$command" in
-  enable-plugin|rehash|shell|shell-options)
-    eval `jenv "sh-$command" "$@"`;;
-  *)
-    command jenv "$command" "$@";;
-  esac
-}
-
+# Android
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 export PATH="$PATH:$ANDROID_HOME/emulator"
 export PATH="$PATH:$ANDROID_HOME/tools"
@@ -116,8 +92,42 @@ export CHROME_EXECUTABLE="/Applications/Brave Browser.app/Contents/MacOS/Brave B
 # Load rbenv in the shell
 eval "$(rbenv init - zsh)"
 
-DEFAULT_USER=$USER
+source "$HOME/.docker/init-zsh.sh" || true # Added by Docker Desktop
 
+# Add "dotfiles" alias
+alias dotfiles='/usr/local/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+
+# jEnv
+export PATH="$HOME/.jenv/bin:$PATH"
+zsh-defer eval "$(jenv init -)"
+
+# --- Previous jEnv config ---
+# eval export PATH="$HOME/.jenv/shims:${PATH}"
+# export JENV_SHELL=zsh
+# export JENV_LOADED=1
+# unset JAVA_HOME
+# unset JDK_HOME
+# source '/usr/local/Cellar/jenv/0.5.6/libexec/libexec/../completions/jenv.zsh'
+# jenv rehash 2>/dev/null
+# jenv refresh-plugins
+# source "$HOME/.jenv/plugins/export/etc/jenv.d/init/export_jenv_hook.zsh"
+# jenv() {
+#   type typeset &> /dev/null && typeset command
+#   command="$1"
+#   if [ "$#" -gt 0 ]; then
+#     shift
+#   fi
+#
+#   case "$command" in
+#   enable-plugin|rehash|shell|shell-options)
+#     eval `jenv "sh-$command" "$@"`;;
+#   *)
+#     command jenv "$command" "$@";;
+#   esac
+# }
+
+# Customise prompt
+DEFAULT_USER=$USER
 prompt_end() {
   if [[ -n $CURRENT_BG ]]; then
       print -n "%{%k%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR"
@@ -131,8 +141,3 @@ prompt_end() {
   #Adds the new line and ➜ as the start character.
   printf "\n ➜";
 }
-
-source "$HOME/.docker/init-zsh.sh" || true # Added by Docker Desktop
-
-# Add "dotfiles" alias
-alias dotfiles='/usr/local/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
