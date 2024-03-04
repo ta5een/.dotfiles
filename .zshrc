@@ -72,9 +72,6 @@ source $ZSH/oh-my-zsh.sh
 # terminal to use to request the passphrase
 export GPG_TTY=$(tty)
 
-# FNM
-eval "$(fnm env --use-on-cd)"
-
 # PNPM
 export PNPM_HOME="$HOME/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
@@ -89,42 +86,17 @@ export PATH="$PATH:$ANDROID_HOME/platform-tools"
 # Flutter requires `CHROME_EXECUTABLE` to develop for the web
 export CHROME_EXECUTABLE="/Applications/Brave Browser.app/Contents/MacOS/Brave Browser"
 
-# Load rbenv in the shell
-eval "$(rbenv init - zsh)"
-
 source "$HOME/.docker/init-zsh.sh" || true # Added by Docker Desktop
 
-# Add "dotfiles" alias
-alias dotfiles='/usr/local/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+# Load rbenv in the shell
+zsh-defer eval "$(rbenv init - zsh)"
+
+# fnm
+zsh-defer eval "$(fnm env --use-on-cd)"
 
 # jEnv
 export PATH="$HOME/.jenv/bin:$PATH"
 zsh-defer eval "$(jenv init -)"
-
-# --- Previous jEnv config ---
-# eval export PATH="$HOME/.jenv/shims:${PATH}"
-# export JENV_SHELL=zsh
-# export JENV_LOADED=1
-# unset JAVA_HOME
-# unset JDK_HOME
-# source '/usr/local/Cellar/jenv/0.5.6/libexec/libexec/../completions/jenv.zsh'
-# jenv rehash 2>/dev/null
-# jenv refresh-plugins
-# source "$HOME/.jenv/plugins/export/etc/jenv.d/init/export_jenv_hook.zsh"
-# jenv() {
-#   type typeset &> /dev/null && typeset command
-#   command="$1"
-#   if [ "$#" -gt 0 ]; then
-#     shift
-#   fi
-#
-#   case "$command" in
-#   enable-plugin|rehash|shell|shell-options)
-#     eval `jenv "sh-$command" "$@"`;;
-#   *)
-#     command jenv "$command" "$@";;
-#   esac
-# }
 
 # Customise prompt
 DEFAULT_USER=$USER
