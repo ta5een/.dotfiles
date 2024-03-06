@@ -13,11 +13,13 @@ Ensure you have the following installed in your system:
 
 ## Installation
 
-First, clone the `.dotfiles` repo in your `$HOME` directory using `git`:
+First, clone the `.dotfiles` repo into your `$HOME` directory using `git`:
 
 ```sh
-$ git clone https://github.com/ta5een/.dotfiles.git
+$ git clone --recurse-submodules https://github.com/ta5een/.dotfiles.git
 ```
+
+> NOTE: The `--recurse-submodules` flag will automatically initialize and update the `.config/nvim` submodule when you clone this repository.
 
 Next, use GNU Stow to create symlinks from `$HOME/.dotfiles` to `$HOME`:
 

@@ -9,6 +9,8 @@
 	ff = only
 [commit]
 	gpgsign = true
+[diff]
+	submodule = log
 
 # The contents of this file are included only for GitLab.com URLs
 [includeIf "hasconfig:remote.*.url:https://code.research.uts.edu.au/**"]
