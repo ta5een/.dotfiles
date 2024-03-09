@@ -1,0 +1,13 @@
+!**/.gitignore
+!**/.stylua.toml
+
+!.config
+!.bashrc
+!.gitconfig
+!.gitmodules
+!.profile
+!.rgignore
+!.stow-global-ignore
+!.zprofile
+!.zshenv
+!.zshrc
