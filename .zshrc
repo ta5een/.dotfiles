@@ -1,4 +1,7 @@
-############################## Zsh Configuration ###############################
+#!/bin/zsh
+#
+# .zshrc - Zsh file loaded on interactive shell sessions.
+#
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -69,24 +72,12 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # GPG may require passphrase every now and then - this line lets it know which
-# terminal to use to request the passphrase
+# terminal to use to request the passphrase.
 export GPG_TTY=$(tty)
 
-# PNPM
-export PNPM_HOME="$HOME/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-
-# Android
-export ANDROID_HOME="$HOME/Library/Android/sdk"
-export PATH="$PATH:$ANDROID_HOME/emulator"
-export PATH="$PATH:$ANDROID_HOME/tools"
-export PATH="$PATH:$ANDROID_HOME/tools/bin"
-export PATH="$PATH:$ANDROID_HOME/platform-tools"
-
-# Flutter requires `CHROME_EXECUTABLE` to develop for the web
-export CHROME_EXECUTABLE="/Applications/Brave Browser.app/Contents/MacOS/Brave Browser"
-
-source "$HOME/.docker/init-zsh.sh" || true # Added by Docker Desktop
+# Added by Docker Desktop
+# TODO: Since this is already sourced in `~/.profile`, is this needed?
+source "$HOME/.docker/init-zsh.sh" || true
 
 # Load rbenv in the shell
 zsh-defer eval "$(rbenv init - zsh)"
