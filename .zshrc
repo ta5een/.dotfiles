@@ -80,14 +80,20 @@ export GPG_TTY=$(tty)
 source "$HOME/.docker/init-zsh.sh" || true
 
 # Load rbenv in the shell
-zsh-defer eval "$(rbenv init - zsh)"
+if (( $+commands[rbenv] )); then
+  zsh-defer eval "$(rbenv init - zsh)"
+fi
 
 # fnm
-zsh-defer eval "$(fnm env --use-on-cd)"
+if (( $+commands[fnm] )); then
+  zsh-defer eval "$(fnm env --use-on-cd)"
+fi
 
 # jEnv
-export PATH="$HOME/.jenv/bin:$PATH"
-zsh-defer eval "$(jenv init -)"
+if (( $+commands[jenv] )); then
+  export PATH="$HOME/.jenv/bin:$PATH"
+  zsh-defer eval "$(jenv init -)"
+fi
 
 # Customise prompt
 DEFAULT_USER=$USER
