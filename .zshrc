@@ -82,12 +82,6 @@ source $ZSH/oh-my-zsh.sh
 # terminal to use to request the passphrase.
 export GPG_TTY=$(tty)
 
-# Added by Docker Desktop
-# TODO: Since this is already sourced in `~/.profile`, is this needed?
-if [[ -d "$HOME/.docker" ]]; then
-  source "$HOME/.docker/init-zsh.sh" || true
-fi
-
 # Load rbenv in the shell
 if (( $+commands[rbenv] )); then
   zsh-defer eval "$(rbenv init - zsh)"
