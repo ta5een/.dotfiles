@@ -1,16 +1,33 @@
 [user]
-	name = Ta-Seen Islam
+	name = Ta-Seen
 	email = taseen00.islam@gmail.com
+
 [core]
 	editor = nvim
-[init]
-	defaultBranch = main
-[pull]
-	ff = only
+	pager = delta
+
 [commit]
 	gpgsign = true
+
+[delta]
+	navigate = true
+	syntax-theme = Kanagawa
+
 [diff]
+	colorMoved = default
 	submodule = log
+
+[init]
+	defaultBranch = main
+
+[interactive]
+	diffFilter = delta --color-only
+
+[merge]
+	conflictStyle = diff3
+
+[pull]
+	ff = only
 
 # The contents of this file are included only for GitLab.com URLs
 [includeIf "hasconfig:remote.*.url:https://code.research.uts.edu.au/**"]
