@@ -1,3 +1,6 @@
 [submodule ".config/nvim"]
 	path = .config/nvim
 	url = https://github.com/ta5een/kickstart.nvim.git
+[submodule ".config/bat/themes/kanagawa"]
+	path = .config/bat/themes/kanagawa
+	url = https://github.com/obergodmar/kanagawa-tmTheme.git
