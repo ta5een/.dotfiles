@@ -21,11 +21,15 @@ export PATH="$PATH:$ANDROID_HOME/platform-tools"
 # Flutter requires `CHROME_EXECUTABLE` to develop for the web
 export CHROME_EXECUTABLE="/Applications/Brave Browser.app/Contents/MacOS/Brave Browser"
 
-# Added by Cargo
-. "$HOME/.cargo/env"
-
 # Added by Toolbox App
 export PATH="$PATH:/usr/local/bin"
 
+# Added by Cargo
+if [[ -d "$HOME/.cargo" ]]; then
+  . "$HOME/.cargo/env"
+fi
+
 # Added by Docker Desktop
-source "$HOME/.docker/init-bash.sh" || true
+if [[ -d "$HOME/.docker" ]]; then
+  source "$HOME/.docker/init-bash.sh" || true
+fi
