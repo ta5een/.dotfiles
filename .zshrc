@@ -62,7 +62,14 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git macos zsh-syntax-highlighting zsh-defer vi-mode)
+plugins=(
+  autoupdate
+  git
+  macos
+  vi-mode
+  zsh-defer
+  zsh-syntax-highlighting
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -77,7 +84,9 @@ export GPG_TTY=$(tty)
 
 # Added by Docker Desktop
 # TODO: Since this is already sourced in `~/.profile`, is this needed?
-source "$HOME/.docker/init-zsh.sh" || true
+if [[ -d "$HOME/.docker" ]]; then
+  source "$HOME/.docker/init-zsh.sh" || true
+fi
 
 # Load rbenv in the shell
 if (( $+commands[rbenv] )); then
