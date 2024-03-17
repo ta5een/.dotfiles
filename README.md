@@ -35,15 +35,21 @@ $ ls -al ~
 lrwxr-xr-x    1 taseen  staff     17  5 Mar 00:16 .bashrc -> .dotfiles/.bashrc
 lrwxr-xr-x    1 taseen  staff     20  5 Mar 00:16 .gitconfig -> .dotfiles/.gitconfig
 lrwxr-xr-x    1 taseen  staff     18  5 Mar 00:16 .profile -> .dotfiles/.profile
-lrwxr-xr-x    1 taseen  staff     19  5 Mar 00:16 .zprofile -> .dotfiles/.zprofile
 lrwxr-xr-x    1 taseen  staff     17  5 Mar 00:16 .zshenv -> .dotfiles/.zshenv
 lrwxr-xr-x    1 taseen  staff     16  5 Mar 00:16 .zshrc -> .dotfiles/.zshrc
+# ... and so on ...
 
 $ ls -al ~/.config
+lrwxr-xr-x   1 taseen  staff    25  5 Mar 00:16 bat -> ../.dotfiles/.config/bat
+lrwxr-xr-x   1 taseen  staff    25  5 Mar 00:16 kitty -> ../.dotfiles/.config/kitty
+lrwxr-xr-x   1 taseen  staff    25  5 Mar 00:16 lazygit -> ../.dotfiles/.config/lazygit
 lrwxr-xr-x   1 taseen  staff    25  5 Mar 00:16 nvim -> ../.dotfiles/.config/nvim
 lrwxr-xr-x   1 taseen  staff    25  5 Mar 00:16 skhd -> ../.dotfiles/.config/skhd
 lrwxr-xr-x   1 taseen  staff    26  5 Mar 00:16 yabai -> ../.dotfiles/.config/yabai
+# ... and so on ...
 ```
+
+> NOTE: The output above is only a short snippet to serve as an example. You may have a different output.
 
 ## Further reading
 
