@@ -1,37 +1,12 @@
+#!/bin/sh
+#
+# .profile - Bash file loaded on login. Also sourced from `.zshenv`.
+#
+
 # Set default editor to Neovim
 export EDITOR=nvim
 
-# TODO: Ensure configurations that respect this are moved to this directory
-# Set default configuration folder to `~/.config`
+# TODO: Ensure to move configurations if their programs respect these
 export XDG_CONFIG_HOME="$HOME/.config"
-
-case "$HOST" in
-  taseen-macbook-work.local)
-    # PNPM
-    export PNPM_HOME="$HOME/Library/pnpm"
-    export PATH="$PNPM_HOME:$PATH"
-
-    # Android
-    export ANDROID_HOME="$HOME/Library/Android/sdk"
-    export PATH="$PATH:$ANDROID_HOME/emulator"
-    export PATH="$PATH:$ANDROID_HOME/tools"
-    export PATH="$PATH:$ANDROID_HOME/tools/bin"
-    export PATH="$PATH:$ANDROID_HOME/platform-tools"
-
-    # Flutter requires `CHROME_EXECUTABLE` to develop for the web
-    export CHROME_EXECUTABLE="/Applications/Brave Browser.app/Contents/MacOS/Brave Browser"
-
-    # Added by Toolbox App
-    export PATH="$PATH:/usr/local/bin"
-
-    # Added by Docker Desktop
-    source "$HOME/.docker/init-bash.sh" || true
-
-    # Added by Cargo
-    . "$HOME/.cargo/env"
-    ;;
-
-  taseen-mint)
-    # Nothing here yet...
-    ;;
-esac
+# export XDG_CACHE_HOME="$HOME/.cache"
+# export XDG_DATA_HOME="$HOME/.local/share"

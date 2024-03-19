@@ -18,5 +18,38 @@
 #
 # SEE: https://gist.github.com/Linerre/f11ad4a6a934dcf01ee8415c9457e7b2
 
-# Share environment variables between Bash and Zsh.
-source "$HOME/.profile"
+# Dump completion artefacts into a cache directory.
+# Oh My Zsh sets `ZSH_CACHE_DIR` to `$ZSH/cache` by default.
+export ZSH_COMPDUMP="${ZSH_CACHE_DIR}/.zcompdump-${(%):-%m}-${ZSH_VERSION}"
+
+case "$HOST" in
+  taseen-macbook-work.local)
+    # PNPM
+    export PNPM_HOME="$HOME/Library/pnpm"
+    export PATH="$PNPM_HOME:$PATH"
+
+    # Android
+    export ANDROID_HOME="$HOME/Library/Android/sdk"
+    export PATH="$PATH:$ANDROID_HOME/emulator"
+    export PATH="$PATH:$ANDROID_HOME/tools"
+    export PATH="$PATH:$ANDROID_HOME/tools/bin"
+    export PATH="$PATH:$ANDROID_HOME/platform-tools"
+
+    # Flutter requires `CHROME_EXECUTABLE` to develop for the web
+    export CHROME_EXECUTABLE="/Applications/Brave Browser.app/Contents/MacOS/Brave Browser"
+
+    # Added by Toolbox App
+    # TODO: This appears to be redudant?
+    export PATH="$PATH:/usr/local/bin"
+
+    # Added by Docker Desktop
+    source "$HOME/.docker/init-bash.sh" || true
+
+    # Added by Cargo
+    . "$HOME/.cargo/env"
+    ;;
+
+  taseen-mint)
+    # Nothing here yet...
+    ;;
+esac
