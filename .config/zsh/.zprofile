@@ -3,7 +3,7 @@
 # .zprofile - Zsh file loaded on login.
 #
 
-# NOTE: To avoid `path_helper` causing potential issues when appending and
+# NOTE: To avoid `path_helper` from causing potential issues when appending and
 # prepending to `$PATH`, all environment variables will be set in this file.
 # Please refer to the link below for more information.
 #
@@ -18,8 +18,8 @@
 #
 # SEE: https://gist.github.com/Linerre/f11ad4a6a934dcf01ee8415c9457e7b2
 
-case "$HOST" in
-  taseen-macbook-work.local)
+case "$SHORT_HOST" in
+  taseen-macbook-work)
     # PNPM
     export PNPM_HOME="$HOME/Library/pnpm"
     export PATH="$PNPM_HOME:$PATH"
@@ -35,7 +35,7 @@ case "$HOST" in
     export CHROME_EXECUTABLE="/Applications/Brave Browser.app/Contents/MacOS/Brave Browser"
 
     # Added by Toolbox App
-    # TODO: This appears to be redudant?
+    # TODO: This appears to be redundant?
     export PATH="$PATH:/usr/local/bin"
 
     # Added by Docker Desktop
