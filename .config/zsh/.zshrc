@@ -1,7 +1,34 @@
-############################## Zsh Configuration ###############################
+#!/bin/zsh
+#
+# .zshrc - Zsh file loaded on interactive shell sessions.
+#
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+
+# Zsh history file
+ZSH_HISTFILE_HOME="$XDG_STATE_HOME/zsh"
+export HISTFILE="$ZSH_HISTFILE_HOME/history"
+[ -d "$ZSH_HISTFILE_HOME" ] || mkdir -p "$ZSH_HISTFILE_HOME"
+
+# Prefer "$XDG_CACHE_HOME/zsh" as cache directory if possible.
+if (( ${+XDG_CACHE_HOME} )); then
+  export ZSH_CACHE_DIR="$XDG_CACHE_HOME/zsh"
+else
+  export ZSH_CACHE_DIR="$ZSH/cache" # Default set by oh-my-zsh
+fi
+
+# Create the cache directory if it doesn't exist.
+[ -d "$ZSH_CACHE_DIR" ] || mkdir -p "$ZSH_CACHE_DIR"
+
+# Dump completion artefacts into a cache directory, appended with the machine's
+# hostname without any domain information (refer to `~/.profile` for more
+# information) and the current Zsh version.
+#
+# Borrowed from:
+# - https://github.com/ohmyzsh/ohmyzsh/issues/7332#issuecomment-624221366
+# - https://github.com/ohmyzsh/ohmyzsh/issues/7332#issuecomment-624451063
+export ZSH_COMPDUMP="${ZSH_CACHE_DIR}/.zcompdump-${SHORT_HOST}-${ZSH_VERSION}"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -59,7 +86,14 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git macos zsh-syntax-highlighting zsh-defer vi-mode)
+plugins=(
+  autoupdate
+  git
+  macos
+  vi-mode
+  zsh-defer
+  zsh-syntax-highlighting
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -69,34 +103,24 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # GPG may require passphrase every now and then - this line lets it know which
-# terminal to use to request the passphrase
+# terminal to use to request the passphrase.
 export GPG_TTY=$(tty)
 
-# PNPM
-export PNPM_HOME="$HOME/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-
-# Android
-export ANDROID_HOME="$HOME/Library/Android/sdk"
-export PATH="$PATH:$ANDROID_HOME/emulator"
-export PATH="$PATH:$ANDROID_HOME/tools"
-export PATH="$PATH:$ANDROID_HOME/tools/bin"
-export PATH="$PATH:$ANDROID_HOME/platform-tools"
-
-# Flutter requires `CHROME_EXECUTABLE` to develop for the web
-export CHROME_EXECUTABLE="/Applications/Brave Browser.app/Contents/MacOS/Brave Browser"
-
-source "$HOME/.docker/init-zsh.sh" || true # Added by Docker Desktop
-
 # Load rbenv in the shell
-zsh-defer eval "$(rbenv init - zsh)"
+if (( $+commands[rbenv] )); then
+  zsh-defer eval "$(rbenv init - zsh)"
+fi
 
 # fnm
-zsh-defer eval "$(fnm env --use-on-cd)"
+if (( $+commands[fnm] )); then
+  zsh-defer eval "$(fnm env --use-on-cd)"
+fi
 
 # jEnv
-export PATH="$HOME/.jenv/bin:$PATH"
-zsh-defer eval "$(jenv init -)"
+if (( $+commands[jenv] )); then
+  export PATH="$HOME/.jenv/bin:$PATH"
+  zsh-defer eval "$(jenv init -)"
+fi
 
 # Customise prompt
 DEFAULT_USER=$USER
