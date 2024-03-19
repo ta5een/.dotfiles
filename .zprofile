@@ -18,10 +18,6 @@
 #
 # SEE: https://gist.github.com/Linerre/f11ad4a6a934dcf01ee8415c9457e7b2
 
-# Dump completion artefacts into a cache directory.
-# Oh My Zsh sets `ZSH_CACHE_DIR` to `$ZSH/cache` by default.
-export ZSH_COMPDUMP="${ZSH_CACHE_DIR}/.zcompdump-${(%):-%m}-${ZSH_VERSION}"
-
 case "$HOST" in
   taseen-macbook-work.local)
     # PNPM
