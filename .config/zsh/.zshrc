@@ -6,6 +6,32 @@
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+# Zsh history file
+ZSH_HISTFILE_HOME="$XDG_STATE_HOME/zsh"
+export HISTFILE="$ZSH_HISTFILE_HOME/history"
+[ -d $ZSH_HISTFILE_HOME ] || mkdir -p $ZSH_HISTFILE_HOME
+
+# Prefer "$XDG_CACHE_HOME/zsh" as cache directory if possible.
+if (( ${+XDG_CACHE_HOME} )); then
+  export ZSH_CACHE_DIR="$XDG_CACHE_HOME/zsh"
+else
+  export ZSH_CACHE_DIR="$ZSH/cache" # Default set by oh-my-zsh
+fi
+
+# Create the cache directory if it doesn't exist.
+[ -d $ZSH_CACHE_DIR ] || mkdir -p $ZSH_CACHE_DIR
+
+# Dump completion artefacts into a cache directory, appended with the machine's
+# hostname (without any domain information^1) and current ZSH version.
+#
+# Borrowed from:
+# - https://github.com/ohmyzsh/ohmyzsh/issues/7332#issuecomment-624221366
+# - https://github.com/ohmyzsh/ohmyzsh/issues/7332#issuecomment-624451063
+#
+# [1]: Equivalent to `hostname -s` on BSD systems
+#      https://man.freebsd.org/cgi/man.cgi?hostname(1)
+export ZSH_COMPDUMP="${ZSH_CACHE_DIR}/.zcompdump-${HOST/.*/}-${ZSH_VERSION}"
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -70,25 +96,6 @@ plugins=(
   zsh-defer
   zsh-syntax-highlighting
 )
-
-# By default, OMZ sets the cache directory to "$ZSH/cache", but we'll prefer
-# "$XDG_CACHE_HOME/zsh" if possible.
-if (( ${+XDG_CACHE_HOME} )); then
-  export ZSH_CACHE_DIR="$XDG_CACHE_HOME/zsh"
-else
-  export ZSH_CACHE_DIR="$ZSH/cache"
-fi
-
-# Dump completion artefacts into a cache directory, appended with the machine's
-# hostname (without any domain information^1) and current ZSH version.
-#
-# Borrowed from:
-# - https://github.com/ohmyzsh/ohmyzsh/issues/7332#issuecomment-624221366
-# - https://github.com/ohmyzsh/ohmyzsh/issues/7332#issuecomment-624451063
-#
-# [1]: Equivalent to `hostname -s` on BSD systems
-#      https://man.freebsd.org/cgi/man.cgi?hostname(1)
-export ZSH_COMPDUMP="${ZSH_CACHE_DIR}/.zcompdump-${HOST/.*/}-${ZSH_VERSION}"
 
 source $ZSH/oh-my-zsh.sh
 

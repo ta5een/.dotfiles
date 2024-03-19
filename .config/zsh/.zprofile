@@ -3,9 +3,9 @@
 # .zprofile - Zsh file loaded on login.
 #
 
-# NOTE: To avoid potential issues that `path_helper` may cause when prepending
-# appending and prepending to `$PATH`, all environment variables will be set
-# in this file. Refer to the link below for more information.
+# NOTE: To avoid `path_helper` causing potential issues when appending and
+# prepending to `$PATH`, all environment variables will be set in this file.
+# Please refer to the link below for more information.
 #
 # > For zsh, the order is like this:
 # > 1. `/etc/zshenv` (no longer exists on macOS by default)

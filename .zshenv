@@ -8,5 +8,5 @@ source "$HOME/.profile"
 
 # NOTE: This file needs to live at ~/.zshenv, not in $ZDOTDIR!
 
-# TODO: Move all Zsh config files EXCEPT .zshenv
-# export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+# All other Zsh files are located in the config folder.
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
