@@ -1,11 +1,9 @@
 # Set default editor to Neovim
 export EDITOR=nvim
 
+# TODO: Ensure configurations that respect this are moved to this directory
 # Set default configuration folder to `~/.config`
 export XDG_CONFIG_HOME="$HOME/.config"
-
-# TODO: Move all Zsh config files EXCEPT .zshenv
-# export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 
 case "$HOST" in
   taseen-macbook-work.local)
