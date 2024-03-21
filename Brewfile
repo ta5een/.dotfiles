@@ -9,7 +9,6 @@ is_work_machine = (hostname == "taseen-macbook-work")
 
 # ---[ Taps ]------------------------------------------------------------------
 
-tap "fsouza/prettierd"
 tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
 tap "homebrew/services"
@@ -43,8 +42,6 @@ brew "jenv"
 brew "lcdf-typetools"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
-# Platform built on V8 to build network applications
-brew "node", link: false
 # Development kit for the Java programming language
 brew "openjdk@11"
 # Development kit for the Java programming language
@@ -63,8 +60,6 @@ brew "ripgrep"
 brew "stow"
 # Check your $HOME for unwanted files and directories
 brew "xdg-ninja"
-# prettier, on SPEED!
-brew "fsouza/prettierd/prettierd"
 # A simple terminal UI for git commands, written in Go
 brew "jesseduffield/lazygit/lazygit"
 # Simple hotkey-daemon for macOS.
@@ -88,10 +83,6 @@ cask "racket"
 # ===[ WORK MACHINE BREWFILE ]=================================================
 
 if is_work_machine then
-  # ---[ Taps ]----------------------------------------------------------------
-
-  tap "shopify/shopify"
-
   # ---[ Formulae ]------------------------------------------------------------
 
   # Enables you to reproduce the CircleCI environment locally
@@ -106,10 +97,6 @@ if is_work_machine then
   brew "scrcpy"
   # Validating, recursive, caching DNS resolver
   brew "unbound"
-  # A CLI tool to build for the Shopify platform
-  brew "shopify/shopify/shopify-cli"
-  # Theme Kit is a tool kit for manipulating shopify themes
-  brew "shopify/shopify/themekit"
 
   # ---[ Casks ]---------------------------------------------------------------
 
