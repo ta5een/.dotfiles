@@ -28,8 +28,6 @@ brew "fd"
 brew "ffmpeg"
 # Fast and simple Node.js version manager
 brew "fnm"
-# Command-line outline and bitmap font editor/converter
-brew "fontforge"
 # GitHub command-line tool
 brew "gh"
 # Syntax-highlighting pager for git and diff output
@@ -38,8 +36,6 @@ brew "git-delta"
 brew "imagemagick"
 # Manage your Java environment
 brew "jenv"
-# Manipulate OpenType and multiple-master fonts
-brew "lcdf-typetools"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # Development kit for the Java programming language
