@@ -1,4 +1,4 @@
-# yaml-language-server: $schema=https://raw.githubusercontent.com/jesseduffield/lazygit/1a035db4c817ac07cd59f0f2aa4e1efd1a9b75b6/schema/config.json
+# yaml-language-server: $schema=https://raw.githubusercontent.com/jesseduffield/lazygit/v0.41.0/schema/config.json
 git:
   paging:
     colorArg: always
@@ -8,11 +8,5 @@ gui:
   nerdFontsVersion: '3'
   theme:
     selectedLineBgColor:
-      - reverse
-      - bold
-    # NOTE: This field has been deprecated in `master` in favour of `selectedLineBgColor`.
-    # SEE: https://github.com/jesseduffield/lazygit/pull/3207
-    # SEE: https://github.com/jesseduffield/lazygit/issues/3386
-    selectedRangeBgColor:
       - reverse
       - bold
