@@ -48,6 +48,8 @@ brew "openjdk@17"
 brew "openjdk@8"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
+# Friendly PIL fork (Python Imaging Library)
+brew "pillow"
 # File browser
 brew "ranger"
 # Ruby version manager
