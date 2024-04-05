@@ -36,6 +36,8 @@ brew "git-delta"
 brew "imagemagick"
 # Manage your Java environment
 brew "jenv"
+# ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
+brew "libheif"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # Development kit for the Java programming language
