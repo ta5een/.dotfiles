@@ -32,6 +32,15 @@
 [pull]
 	ff = only
 
+# The repeated `helper =` lines are intentional:
+# https://github.com/cli/cli/issues/3796#issuecomment-1065150465
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
+
 # UTS GitLab repositories
 [includeIf "hasconfig:remote.*.url:https://code.research.uts.edu.au/**"]
 	path = ./config-uts
