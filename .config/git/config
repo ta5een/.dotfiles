@@ -1,3 +1,5 @@
+# vim:ft=gitconfig:tabstop=2
+
 [user]
 	name = Ta-Seen
 	email = taseen00.islam@gmail.com

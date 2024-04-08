@@ -1,0 +1,6 @@
+# vim:ft=gitconfig:tabstop=2
+
+[user]
+	name = Ta-Seen Islam
+	email = ta-seen.islam@student.uts.edu.au
+	signingkey = 7205190889D2FEB0
