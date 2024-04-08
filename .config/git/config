@@ -3,6 +3,7 @@
 [user]
 	name = Ta-Seen
 	email = taseen00.islam@gmail.com
+	signingkey = 2998BDA7B7028419
 
 [core]
 	editor = nvim
