@@ -81,6 +81,20 @@ HIST_STAMPS="yyyy-mm-dd"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+# Configure Zsh Vi Mode settings
+# This must be defined before the plugin is sourced
+# https://github.com/jeffreytse/zsh-vi-mode?tab=readme-ov-file#configuration-function
+function zvm_config() {
+  # Always starting with insert mode for each command line
+  ZVM_LINE_INIT_MODE=$ZVM_MODE_INSERT
+
+  # Configure the surround bindkey with the following behaviours:
+  #   sa"  -> Add " for visual selection
+  #   sd"  -> Delete "
+  #   sr"' -> Change " to '
+  ZVM_VI_SURROUND_BINDKEY="s-prefix"
+}
+
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
@@ -90,9 +104,9 @@ plugins=(
   autoupdate
   git
   macos
-  vi-mode
   zsh-defer
   zsh-syntax-highlighting
+  zsh-vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -134,16 +148,7 @@ prompt_end() {
   print -n "%{%f%}"
   CURRENT_BG=''
 
-  #Adds the new line and ➜ as the start character.
+  # Adds the new line and ➜ as the start character.
   printf "\n ➜";
 }
 
-# Display Vi mode in prompt
-function zle-line-init zle-keymap-select {
-    RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
-    RPS2=$RPS1
-    zle reset-prompt
-}
-
-zle -N zle-line-init
-zle -N zle-keymap-select
