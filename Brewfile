@@ -102,4 +102,6 @@ if is_work_machine then
 
   # UI toolkit for building applications for mobile, web and desktop
   cask "flutter"
+  # Install and switch between multiple versions of Xcode
+  cask "xcodes"
 end
