@@ -136,6 +136,11 @@ if (( $+commands[jenv] )); then
   zsh-defer eval "$(jenv init -)"
 fi
 
+# Set up fzf key bindings and fuzzy completion
+if (( $+commands[fzf] )); then
+  zsh-defer eval "$(fzf --zsh)"
+fi
+
 # Customise prompt
 DEFAULT_USER=$USER
 prompt_end() {

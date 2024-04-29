@@ -28,6 +28,8 @@ brew "fd"
 brew "ffmpeg"
 # Fast and simple Node.js version manager
 brew "fnm"
+# Command-line fuzzy finder written in Go
+brew "fzf"
 # GitHub command-line tool
 brew "gh"
 # Syntax-highlighting pager for git and diff output

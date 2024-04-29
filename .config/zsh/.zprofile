@@ -34,6 +34,9 @@ case "$SHORT_HOST" in
     # Flutter requires `CHROME_EXECUTABLE` to develop for the web
     export CHROME_EXECUTABLE="/Applications/Brave Browser.app/Contents/MacOS/Brave Browser"
 
+    # User scripts
+    export PATH="$PATH:$HOME/.local/bin"
+
     # Added by Toolbox App
     # TODO: This appears to be redundant?
     export PATH="$PATH:/usr/local/bin"
