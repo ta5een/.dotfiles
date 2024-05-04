@@ -1,5 +1,6 @@
 !**/.gitignore
 !**/.stylua.toml
+!**/.vale.ini
 
 !.config
 !.bashrc
