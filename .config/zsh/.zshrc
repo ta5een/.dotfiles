@@ -3,6 +3,71 @@
 # .zshrc - Zsh file loaded on interactive shell sessions.
 #
 
+# NOTE: macOS behaves differently when sourcing Zsh configs and setting PATH.
+#
+# Specifically, macOS runs a program named `path_helper` to resolve the `PATH`
+# variable. Unfortunately, this tool messes up the ordering of existing PATHs.
+# While this has not proved to be detrimental so far, it drifts away from
+# expected behaviour that may cause issues in the future.
+#
+# Additionally, all interactive shell sessions on macOS are also login shells.
+# This is not the case on other Unix systems, most notably Linux. As a result,
+# the previous implementation of defining environment variables in `.zprofile`
+# will not work on non-macOS systems.
+#
+# Due to these reasons, I've moved all environment variables into this file.
+# However, since these variables will now only be available in interactive
+# shells, I'm unsure if this will break existing CLI and GUI applications. I'll
+# have to keep this in mind while I daily-drive this patch.
+#
+# For reference, heres how Zsh startup files are sourced in macOS:
+#
+# 1. `/etc/zshenv` (no longer exists on macOS by default)
+# 2. `~/.zshenv`
+# 3. login mode:
+#   i.  `/etc/zprofile` (calling `path_helper`)
+#   ii. `~/.zprofile`
+# 4. interactive: `/etc/zshrc` `~/.zshrc`
+# 5. login mode: `/etc/zlogin` `~/.zlogin`
+#
+# Refer to the following link for more information:
+# https://gist.github.com/Linerre/f11ad4a6a934dcf01ee8415c9457e7b2
+
+# User scripts
+export PATH="$PATH:$HOME/.local/bin"
+
+# Host-specific variables
+case "$SHORT_HOST" in
+  taseen-macbook-work)
+    # PNPM
+    export PNPM_HOME="$HOME/Library/pnpm"
+    export PATH="$PNPM_HOME:$PATH"
+
+    # Android
+    export ANDROID_HOME="$HOME/Library/Android/sdk"
+    export PATH="$PATH:$ANDROID_HOME/emulator"
+    export PATH="$PATH:$ANDROID_HOME/tools"
+    export PATH="$PATH:$ANDROID_HOME/tools/bin"
+    export PATH="$PATH:$ANDROID_HOME/platform-tools"
+
+    # Flutter requires `CHROME_EXECUTABLE` to develop for the web
+    export CHROME_EXECUTABLE="/Applications/Brave Browser.app/Contents/MacOS/Brave Browser"
+
+    # Added by Toolbox App
+    export PATH="$PATH:/usr/local/bin"
+
+    # Added by Docker Desktop
+    source "$HOME/.docker/init-zsh.sh" || true
+
+    # Added by Cargo
+    . "$HOME/.cargo/env"
+    ;;
+
+  taseen-mint)
+    # Nothing here yet...
+    ;;
+esac
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -156,4 +221,3 @@ prompt_end() {
   # Adds the new line and ➜ as the start character.
   printf "\n ➜";
 }
-

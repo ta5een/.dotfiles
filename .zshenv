@@ -3,7 +3,11 @@
 # .zshenv - Zsh environment file, loaded always.
 #
 
-# NOTE: This file needs to live at ~/.zshenv, not in $ZDOTDIR!
+# NOTE: This file needs to reside in $HOME, not in $ZDOTDIR!
+
+# Tie the $PATH variable to the $path array. This will also ensure only unique
+# values are present in $path.
+typeset -U path PATH
 
 # Share environment variables between Bash and Zsh.
 source "$HOME/.profile"
