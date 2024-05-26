@@ -52,6 +52,8 @@ brew "openjdk@8"
 brew "pandoc"
 # Friendly PIL fork (Python Imaging Library)
 brew "pillow"
+# Paste PNG into files
+brew "pngpaste"
 # File browser
 brew "ranger"
 # Ruby version manager
