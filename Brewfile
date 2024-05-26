@@ -54,6 +54,8 @@ brew "pandoc"
 brew "pillow"
 # Paste PNG into files
 brew "pngpaste"
+# Generic machine emulator and virtualizer
+brew "qemu"
 # File browser
 brew "ranger"
 # Ruby version manager
