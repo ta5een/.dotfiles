@@ -95,16 +95,12 @@ if is_work_machine then
 
   # Enables you to reproduce the CircleCI environment locally
   brew "circleci"
-  # GNU Transport Layer Security (TLS) Library
-  brew "gnutls"
   # Install and debug iPhone apps from the command-line
   brew "ios-deploy"
   # Object-relational database system
   brew "postgresql@14"
   # Display and control your Android device
   brew "scrcpy"
-  # Validating, recursive, caching DNS resolver
-  brew "unbound"
 
   # ---[ Casks ]---------------------------------------------------------------
 
