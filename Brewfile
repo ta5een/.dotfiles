@@ -87,8 +87,6 @@ cask "basictex"
 cask "font-symbols-only-nerd-font"
 # GPU-based terminal emulator
 cask "kitty"
-# Modern programming language in the Lisp/Scheme family
-cask "racket"
 
 # ===[ WORK MACHINE BREWFILE ]=================================================
 
