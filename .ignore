@@ -6,7 +6,7 @@
 !.gitconfig
 !.gitmodules
 !.profile
-!.rgignore
+!.ignore
 !.stow-global-ignore
 !.zprofile
 !.zshenv
