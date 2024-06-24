@@ -4,6 +4,7 @@
 
 hostname = `hostname -s`.strip
 is_work_machine = (hostname == "taseen-macbook-work")
+install_osdev_tools = is_work_machine
 
 # ===[ SHARED BREWFILE ]=======================================================
 
@@ -91,8 +92,6 @@ cask "kitty"
 # ===[ WORK MACHINE BREWFILE ]=================================================
 
 if is_work_machine then
-  # ---[ Formulae ]------------------------------------------------------------
-
   # Enables you to reproduce the CircleCI environment locally
   brew "circleci"
   # Install and debug iPhone apps from the command-line
@@ -101,11 +100,27 @@ if is_work_machine then
   brew "postgresql@14"
   # Display and control your Android device
   brew "scrcpy"
-
-  # ---[ Casks ]---------------------------------------------------------------
-
   # UI toolkit for building applications for mobile, web and desktop
   cask "flutter"
   # Install and switch between multiple versions of Xcode
   cask "xcodes"
+end
+
+if install_osdev_tools then
+  # Tool for generating GNU Standards-compliant Makefiles
+  brew "automake"
+  # GNU awk utility
+  brew "gawk"
+  # GNU debugger
+  brew "gdb"
+  # GNU compiler collection for i686-elf
+  brew "i686-elf-gcc"
+  # Next-gen compiler infrastructure
+  brew "llvm"
+  # Object file converter
+  brew "objconv"
+  # GNU compiler collection for x86_64-elf
+  brew "x86_64-elf-gcc"
+  # ISO9660+RR manipulation tool
+  brew "xorriso"
 end
