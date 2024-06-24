@@ -4,6 +4,7 @@
 
 hostname = `hostname -s`.strip
 install_work_tools = (hostname == "taseen-macbook-work")
+install_osdev_tools = false
 
 tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
@@ -95,4 +96,23 @@ if install_work_tools then
   cask "flutter"
   # Install and switch between multiple versions of Xcode
   cask "xcodes"
+end
+
+if install_osdev_tools then
+  # Tool for generating GNU Standards-compliant Makefiles
+  brew "automake"
+  # GNU awk utility
+  brew "gawk"
+  # GNU debugger
+  brew "gdb"
+  # GNU compiler collection for i686-elf
+  brew "i686-elf-gcc"
+  # Next-gen compiler infrastructure
+  brew "llvm"
+  # Object file converter
+  brew "objconv"
+  # GNU compiler collection for x86_64-elf
+  brew "x86_64-elf-gcc"
+  # ISO9660+RR manipulation tool
+  brew "xorriso"
 end
