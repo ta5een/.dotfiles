@@ -22,5 +22,12 @@
   },
   "theme": "Zedokai Darker (Filter Spectrum)",
   "vim_mode": true,
-  "wrap_guides": [80, 120]
+  "wrap_guides": [80, 120],
+  "lsp": {
+    "clangd": {
+      "binary": {
+        "path": "/Users/taseen/.local/share/nvim/mason/bin/clangd"
+      }
+    }
+  }
 }
