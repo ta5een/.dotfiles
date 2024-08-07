@@ -4,8 +4,8 @@
 
 hostname = `hostname -s`.strip
 install_work_tools = (hostname == "taseen-macbook-work")
-install_serenity_os_deps = false
 install_osdev_tools = true
+install_serenity_os_deps = true
 
 tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
