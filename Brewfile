@@ -84,6 +84,8 @@ brew "unar"
 brew "xdg-ninja"
 # Blazing fast terminal file manager written in Rust, based on async I/O
 brew "yazi"
+# Shell extension to navigate your filesystem faster
+brew "zoxide"
 
 # A simple terminal UI for git commands, written in Go
 brew "jesseduffield/lazygit/lazygit"
