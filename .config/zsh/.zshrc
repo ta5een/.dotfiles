@@ -170,8 +170,8 @@ plugins=(
   git
   macos
   zsh-defer
-  zsh-syntax-highlighting
   zsh-vi-mode
+  zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -221,3 +221,7 @@ prompt_end() {
   # Adds the new line and ➜ as the start character.
   printf "\n ➜";
 }
+
+# Change comment highlight style
+typeset -A ZSH_HIGHLIGHT_STYLES
+ZSH_HIGHLIGHT_STYLES[comment]='fg=magenta,bold'
