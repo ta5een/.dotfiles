@@ -26,6 +26,8 @@ brew "bochs"
 brew "fd"
 # Play, record, convert, and stream audio and video
 brew "ffmpeg"
+# Create thumbnails for your video files
+brew "ffmpegthumbnailer"
 # Fast and simple Node.js version manager
 brew "fnm"
 # Command-line fuzzy finder written in Go
@@ -38,6 +40,8 @@ brew "git-delta"
 brew "imagemagick"
 # Manage your Java environment
 brew "jenv"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
 # ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
 brew "libheif"
 # Netwide Assembler (NASM) is an 80x86 assembler
@@ -56,6 +60,8 @@ brew "pandoc"
 brew "pillow"
 # Paste PNG into files
 brew "pngpaste"
+# PDF rendering library (based on the xpdf-3.0 code base)
+brew "poppler"
 # Generic machine emulator and virtualizer
 brew "qemu"
 # File browser
@@ -68,8 +74,12 @@ brew "ripgrep"
 brew "sdl2"
 # Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
+# Command-line unarchiving tools supporting multiple formats
+brew "unar"
 # Check your $HOME for unwanted files and directories
 brew "xdg-ninja"
+# Blazing fast terminal file manager written in Rust, based on async I/O
+brew "yazi"
 
 # A simple terminal UI for git commands, written in Go
 brew "jesseduffield/lazygit/lazygit"
