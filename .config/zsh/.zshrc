@@ -61,6 +61,11 @@ case "$SHORT_HOST" in
 
     # Added by Cargo
     . "$HOME/.cargo/env"
+
+    export ZVM_PATH="$XDG_DATA_HOME/zvm"
+    export ZVM_INSTALL="$ZVM_PATH/self"
+    export PATH="$PATH:$ZVM_PATH/bin"
+    export PATH="$PATH:$ZVM_INSTALL"
     ;;
 
   taseen-mint)
