@@ -20,6 +20,8 @@ brew "asciidoctor"
 brew "bat"
 # Generate compilation database for clang tooling
 brew "bear"
+# Open source IA-32 (x86) PC emulator written in C++
+brew "bochs"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
 # Play, record, convert, and stream audio and video
@@ -62,6 +64,8 @@ brew "ranger"
 brew "rbenv"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
+# Low-level access to audio, keyboard, mouse, joystick, and graphics
+brew "sdl2"
 # Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
 # Check your $HOME for unwanted files and directories
