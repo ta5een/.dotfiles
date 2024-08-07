@@ -1,3 +1,4 @@
+// vim: ft=jsonc
 // Zed settings
 //
 // For information on how to configure Zed, see the Zed
@@ -7,15 +8,18 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "project_panel": {
+    "dock": "left"
+  },
   "buffer_font_family": "DM Mono",
-  "buffer_font_size": 16,
+  "buffer_font_size": 14,
   "relative_line_numbers": true,
   "show_whitespaces": "selection",
   "telemetry": {
     "diagnostics": true,
     "metrics": false
   },
-  "theme": "Zedokai (Filter Spectrum)",
+  "theme": "Zedokai Darker (Filter Spectrum)",
   "vim_mode": true,
   "wrap_guides": [80, 120]
 }
