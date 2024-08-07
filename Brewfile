@@ -44,10 +44,14 @@ brew "jenv"
 brew "jq"
 # ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
 brew "libheif"
+# Fast and user friendly build system
+brew "meson"
 # Netwide Assembler (NASM) is an 80x86 assembler
 brew "nasm"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# Small build system for use with gyp or CMake
+brew "ninja"
 # Development kit for the Java programming language
 brew "openjdk@11"
 # Development kit for the Java programming language
@@ -143,8 +147,6 @@ if install_serenity_os_deps then
   brew "e2fsprogs"
   # Generates an ext2 filesystem as a normal (non-root) user
   brew "genext2fs"
-  # Small build system for use with gyp or CMake
-  brew "ninja"
   # Utility that provides fast incremental file transfer
   brew "rsync"
 end
