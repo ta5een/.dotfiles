@@ -4,7 +4,7 @@
 
 hostname = `hostname -s`.strip
 install_osdev_tools = true
-install_serenity_os_deps = install_osdev_tools && false
+install_serenity_os_deps = install_osdev_tools && true
 
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
