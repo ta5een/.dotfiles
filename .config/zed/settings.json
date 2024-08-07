@@ -13,6 +13,7 @@
   },
   "buffer_font_family": "DM Mono",
   "buffer_font_size": 14,
+  "format_on_save": "language_server",
   "relative_line_numbers": true,
   "show_whitespaces": "selection",
   "telemetry": {
