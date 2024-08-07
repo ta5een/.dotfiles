@@ -3,11 +3,7 @@
 # vim: ft=ruby
 
 hostname = `hostname -s`.strip
-is_work_machine = (hostname == "taseen-macbook-work")
-
-# ===[ SHARED BREWFILE ]=======================================================
-
-# ---[ Taps ]------------------------------------------------------------------
+install_work_tools = (hostname == "taseen-macbook-work")
 
 tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
@@ -15,8 +11,6 @@ tap "homebrew/services"
 tap "jesseduffield/lazygit"
 tap "koekeishiya/formulae"
 tap "oven-sh/bun"
-
-# ---[ Formulae ]--------------------------------------------------------------
 
 # Text processor and publishing toolchain for AsciiDoc
 brew "asciidoctor"
@@ -70,6 +64,7 @@ brew "ripgrep"
 brew "stow"
 # Check your $HOME for unwanted files and directories
 brew "xdg-ninja"
+
 # A simple terminal UI for git commands, written in Go
 brew "jesseduffield/lazygit/lazygit"
 # Simple hotkey-daemon for macOS.
@@ -79,8 +74,6 @@ brew "koekeishiya/formulae/yabai"
 # Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
 brew "oven-sh/bun/bun"
 
-# ---[ Casks ]-----------------------------------------------------------------
-
 # Compact TeX distribution as alternative to the full TeX Live / MacTeX
 cask "basictex"
 # Developer targeted fonts with a high number of glyphs
@@ -88,11 +81,7 @@ cask "font-symbols-only-nerd-font"
 # GPU-based terminal emulator
 cask "kitty"
 
-# ===[ WORK MACHINE BREWFILE ]=================================================
-
-if is_work_machine then
-  # ---[ Formulae ]------------------------------------------------------------
-
+if install_work_tools then
   # Enables you to reproduce the CircleCI environment locally
   brew "circleci"
   # Install and debug iPhone apps from the command-line
@@ -101,8 +90,6 @@ if is_work_machine then
   brew "postgresql@14"
   # Display and control your Android device
   brew "scrcpy"
-
-  # ---[ Casks ]---------------------------------------------------------------
 
   # UI toolkit for building applications for mobile, web and desktop
   cask "flutter"
