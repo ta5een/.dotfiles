@@ -3,7 +3,7 @@
 # vim: ft=ruby
 
 hostname = `hostname -s`.strip
-install_osdev_tools = false
+install_osdev_tools = true
 install_serenity_os_deps = install_osdev_tools && false
 
 # Clone of cat(1) with syntax highlighting and Git integration
