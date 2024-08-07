@@ -211,6 +211,11 @@ if (( $+commands[fzf] )); then
   zsh-defer eval "$(fzf --zsh)"
 fi
 
+# zoxide (this code should appear near the end of this file)
+if (( $+commands[zoxide] )); then
+  zsh-defer eval "$(zoxide init zsh)"
+fi
+
 # Customise prompt
 DEFAULT_USER=$USER
 prompt_end() {
