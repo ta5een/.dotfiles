@@ -4,7 +4,7 @@
 
 hostname = `hostname -s`.strip
 install_work_tools = (hostname == "taseen-macbook-work")
-install_osdev_tools = false
+install_osdev_tools = true
 install_serenity_os_deps = install_osdev_tools && false
 
 tap "jesseduffield/lazygit"
