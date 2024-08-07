@@ -106,14 +106,10 @@ if install_osdev_tools then
   brew "gawk"
   # GNU debugger
   brew "gdb"
-  # GNU compiler collection for i686-elf
-  brew "i686-elf-gcc"
   # Next-gen compiler infrastructure
   brew "llvm"
   # Object file converter
   brew "objconv"
-  # GNU compiler collection for x86_64-elf
-  brew "x86_64-elf-gcc"
   # ISO9660+RR manipulation tool
   brew "xorriso"
 end
