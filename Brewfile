@@ -8,7 +8,6 @@ install_osdev_tools = false
 install_serenity_os_deps = false
 
 tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
 tap "homebrew/services"
 tap "jesseduffield/lazygit"
 tap "koekeishiya/formulae"
