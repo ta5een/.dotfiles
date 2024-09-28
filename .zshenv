@@ -14,3 +14,6 @@ source "$HOME/.profile"
 
 # All other Zsh files are located in the config folder.
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+
+# Add Homebrew to PATH
+eval "$(/opt/homebrew/bin/brew shellenv)"
