@@ -1,12 +1,13 @@
 !**/.gitignore
 !**/.stylua.toml
 
-!.config
 !.bashrc
+!.config
+!.gdbinit
 !.gitconfig
 !.gitmodules
-!.profile
 !.ignore
+!.profile
 !.stow-global-ignore
 !.zprofile
 !.zshenv
