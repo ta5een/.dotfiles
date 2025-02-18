@@ -202,6 +202,9 @@ case "$SHORT_HOST" in
     export ZVM_INSTALL="$ZVM_PATH/self"
     export PATH="$PATH:$ZVM_PATH/bin"
     export PATH="$PATH:$ZVM_INSTALL"
+ 
+    # LLVM
+    export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
     ;;
 
   taseen-mint)
