@@ -8,11 +8,14 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "features": {
+    "inline_completion_provider": "none"
+  },
   "project_panel": {
     "dock": "left"
   },
   "buffer_font_family": "DM Mono",
-  "buffer_font_size": 14,
+  "buffer_font_size": 14.5,
   "format_on_save": "language_server",
   "relative_line_numbers": true,
   "show_whitespaces": "selection",
@@ -22,7 +25,10 @@
   },
   "theme": "Zedokai Darker (Filter Spectrum)",
   "vim_mode": true,
-  "wrap_guides": [80, 120],
+  "wrap_guides": [
+    80,
+    120
+  ],
   "lsp": {
     "clangd": {
       "binary": {
