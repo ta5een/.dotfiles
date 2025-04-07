@@ -37,6 +37,8 @@ brew "imagemagick"
 brew "jq"
 # ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
 brew "libheif"
+# Powerful, lightweight programming language
+brew "lua"
 # Fast and user friendly build system
 brew "meson"
 # Netwide Assembler (NASM) is an 80x86 assembler
