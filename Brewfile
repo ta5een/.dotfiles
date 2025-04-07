@@ -89,19 +89,7 @@ cask "font-symbols-only-nerd-font"
 cask "kitty"
 
 if install_work_tools then
-  # Enables you to reproduce the CircleCI environment locally
-  brew "circleci"
-  # Install and debug iPhone apps from the command-line
-  brew "ios-deploy"
-  # Object-relational database system
-  brew "postgresql@14"
-  # Display and control your Android device
-  brew "scrcpy"
-
-  # UI toolkit for building applications for mobile, web and desktop
-  cask "flutter"
-  # Install and switch between multiple versions of Xcode
-  cask "xcodes"
+  # Nothing here yet...
 end
 
 if install_osdev_tools then
