@@ -5,7 +5,7 @@
 hostname = `hostname -s`.strip
 install_work_tools = (hostname == "taseen-macbook-work")
 install_osdev_tools = false
-install_serenity_os_deps = false
+install_serenity_os_deps = install_osdev_tools && false
 
 tap "homebrew/bundle"
 tap "homebrew/services"
@@ -131,23 +131,21 @@ if install_osdev_tools then
   brew "objconv"
   # ISO9660+RR manipulation tool
   brew "xorriso"
-end
 
-if install_serenity_os_deps then
-  # Zstandard is a real-time compression algorithm
-  brew "zstd"
-  # Bourne-Again SHell, a UNIX command interpreter
-  brew "bash"
-  # Object-file caching compiler wrapper
-  brew "ccache"
-  # Cross-platform make
-  brew "cmake"
-  # GNU File, Shell, and Text utilities
-  brew "coreutils"
-  # Utilities for the ext2, ext3, and ext4 file systems
-  brew "e2fsprogs"
-  # Generates an ext2 filesystem as a normal (non-root) user
-  brew "genext2fs"
-  # Utility that provides fast incremental file transfer
-  brew "rsync"
+  if install_serenity_os_deps then
+    # Zstandard is a real-time compression algorithm
+    brew "zstd"
+    # Bourne-Again SHell, a UNIX command interpreter
+    brew "bash"
+    # Object-file caching compiler wrapper
+    brew "ccache"
+    # Cross-platform make
+    brew "cmake"
+    # Utilities for the ext2, ext3, and ext4 file systems
+    brew "e2fsprogs"
+    # Generates an ext2 filesystem as a normal (non-root) user
+    brew "genext2fs"
+    # Utility that provides fast incremental file transfer
+    brew "rsync"
+  end
 end
