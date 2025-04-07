@@ -35,8 +35,6 @@ brew "gh"
 brew "git-delta"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
-# Manage your Java environment
-brew "jenv"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
 # ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
@@ -49,12 +47,6 @@ brew "nasm"
 brew "neovim"
 # Small build system for use with gyp or CMake
 brew "ninja"
-# Development kit for the Java programming language
-brew "openjdk@11"
-# Development kit for the Java programming language
-brew "openjdk@17"
-# Development kit for the Java programming language
-brew "openjdk@8"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
 # Friendly PIL fork (Python Imaging Library)
