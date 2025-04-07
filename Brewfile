@@ -17,8 +17,6 @@ tap "oven-sh/bun"
 brew "bat"
 # Generate compilation database for clang tooling
 brew "bear"
-# Open source IA-32 (x86) PC emulator written in C++
-brew "bochs"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
 # Play, record, convert, and stream audio and video
@@ -55,8 +53,6 @@ brew "pillow"
 brew "pngpaste"
 # PDF rendering library (based on the xpdf-3.0 code base)
 brew "poppler"
-# Generic machine emulator and virtualizer
-brew "qemu"
 # File browser
 brew "ranger"
 # Ruby version manager
@@ -111,14 +107,26 @@ end
 if install_osdev_tools then
   # Tool for generating GNU Standards-compliant Makefiles
   brew "automake"
+  # Open source IA-32 (x86) PC emulator written in C++
+  brew "bochs"
+  # GNU File, Shell, and Text utilities
+  brew "coreutils"
   # GNU awk utility
   brew "gawk"
   # GNU debugger
   brew "gdb"
+  # GNU multiple precision arithmetic library
+  brew "gmp"
   # Next-gen compiler infrastructure
   brew "llvm"
+  # C library for multiple-precision floating-point computations
+  brew "mpfr"
   # Object file converter
   brew "objconv"
+  # Generic machine emulator and virtualizer
+  brew "qemu"
+  # Official documentation format of the GNU project
+  brew "texinfo"
   # ISO9660+RR manipulation tool
   brew "xorriso"
 
