@@ -87,6 +87,8 @@ brew "oven-sh/bun/bun"
 cask "basictex"
 # Developer targeted fonts with a high number of glyphs
 cask "font-symbols-only-nerd-font"
+# Tools to protect your emails and files
+cask "gpg-suite"
 # GPU-based terminal emulator
 cask "kitty"
 
