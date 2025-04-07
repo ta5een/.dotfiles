@@ -13,8 +13,6 @@ tap "jesseduffield/lazygit"
 tap "koekeishiya/formulae"
 tap "oven-sh/bun"
 
-# Text processor and publishing toolchain for AsciiDoc
-brew "asciidoctor"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
 # Generate compilation database for clang tooling
