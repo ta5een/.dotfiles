@@ -2,7 +2,8 @@
 
 [user]
 	name = Ta-Seen
-	email = taseen00.islam@gmail.com
+	email = mohammed@paylatertravel.com.au
+	signingkey = 92780223B1897B40
 
 [core]
 	editor = nvim
