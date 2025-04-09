@@ -3,50 +3,25 @@
 # vim: ft=ruby
 
 hostname = `hostname -s`.strip
-install_work_tools = (hostname == "taseen-macbook-work")
 install_osdev_tools = false
 install_serenity_os_deps = install_osdev_tools && false
 
-tap "jesseduffield/lazygit"
-tap "koekeishiya/formulae"
-tap "oven-sh/bun"
-
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
-# Generate compilation database for clang tooling
-brew "bear"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
-# Play, record, convert, and stream audio and video
-brew "ffmpeg"
-# Create thumbnails for your video files
-brew "ffmpegthumbnailer"
-# Fast and simple Node.js version manager
-brew "fnm"
 # Command-line fuzzy finder written in Go
 brew "fzf"
 # GitHub command-line tool
 brew "gh"
 # Syntax-highlighting pager for git and diff output
 brew "git-delta"
-# Tools and libraries to manipulate images in many formats
-brew "imagemagick"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
-# ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
-brew "libheif"
 # Powerful, lightweight programming language
 brew "lua"
-# Fast and user friendly build system
-brew "meson"
-# Netwide Assembler (NASM) is an 80x86 assembler
-brew "nasm"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
-# Small build system for use with gyp or CMake
-brew "ninja"
-# Swiss-army knife of markup format conversion
-brew "pandoc"
 # Friendly PIL fork (Python Imaging Library)
 brew "pillow"
 # Paste PNG into files
@@ -59,8 +34,6 @@ brew "ranger"
 brew "rbenv"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
-# Low-level access to audio, keyboard, mouse, joystick, and graphics
-brew "sdl2"
 # Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
 # Command-line unarchiving tools supporting multiple formats
@@ -72,17 +45,10 @@ brew "yazi"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
 
+tap "jesseduffield/lazygit"
 # A simple terminal UI for git commands, written in Go
 brew "jesseduffield/lazygit/lazygit"
-# Simple hotkey-daemon for macOS.
-brew "koekeishiya/formulae/skhd"
-# A tiling window manager for macOS based on binary space partitioning.
-brew "koekeishiya/formulae/yabai"
-# Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
-brew "oven-sh/bun/bun"
 
-# Compact TeX distribution as alternative to the full TeX Live / MacTeX
-cask "basictex"
 # Developer targeted fonts with a high number of glyphs
 cask "font-symbols-only-nerd-font"
 # Tools to protect your emails and files
@@ -90,8 +56,43 @@ cask "gpg-suite"
 # GPU-based terminal emulator
 cask "kitty"
 
-if install_work_tools then
-  # Nothing here yet...
+case hostname
+when "taseen-macbook-m3"
+  # Generate compilation database for clang tooling
+  brew "bear"
+  # Play, record, convert, and stream audio and video
+  brew "ffmpeg"
+  # Create thumbnails for your video files
+  brew "ffmpegthumbnailer"
+  # Fast and simple Node.js version manager
+  brew "fnm"
+  # Tools and libraries to manipulate images in many formats
+  brew "imagemagick"
+  # ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
+  brew "libheif"
+  # Fast and user friendly build system
+  brew "meson"
+  # Netwide Assembler (NASM) is an 80x86 assembler
+  brew "nasm"
+  # Small build system for use with gyp or CMake
+  brew "ninja"
+  # Swiss-army knife of markup format conversion
+  brew "pandoc"
+  # Low-level access to audio, keyboard, mouse, joystick, and graphics
+  brew "sdl2"
+
+  tap "oven-sh/bun"
+  # Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
+  brew "oven-sh/bun/bun"
+
+  tap "koekeishiya/formulae"
+  # Simple hotkey-daemon for macOS.
+  brew "koekeishiya/formulae/skhd"
+  # A tiling window manager for macOS based on binary space partitioning.
+  brew "koekeishiya/formulae/yabai"
+
+  # Compact TeX distribution as alternative to the full TeX Live / MacTeX
+  cask "basictex"
 end
 
 if install_osdev_tools then
