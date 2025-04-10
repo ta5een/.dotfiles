@@ -135,6 +135,7 @@ function zvm_config() {
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   autoupdate
+  direnv
   git
   macos
   zsh-defer
