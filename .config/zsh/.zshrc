@@ -193,17 +193,6 @@ if (( $+commands[rbenv] )); then
   zsh-defer eval "$(rbenv init - zsh)"
 fi
 
-# fnm
-if (( $+commands[fnm] )); then
-  zsh-defer eval "$(fnm env --use-on-cd)"
-fi
-
-# jEnv
-if (( $+commands[jenv] )); then
-  export PATH="$HOME/.jenv/bin:$PATH"
-  zsh-defer eval "$(jenv init -)"
-fi
-
 # Set up fzf key bindings and fuzzy completion
 if (( $+commands[fzf] )); then
   zsh-defer eval "$(fzf --zsh)"
