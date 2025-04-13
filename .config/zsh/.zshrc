@@ -214,29 +214,18 @@ esac
 export GPG_TTY=$(tty)
 
 # Load rbenv in the shell
-if (( $+commands[rbenv] )); then
-  zsh-defer eval "$(rbenv init - zsh)"
-fi
-
+(( $+commands[rbenv] )) && zsh-defer eval "$(rbenv init - zsh)"
 # fnm
-if (( $+commands[fnm] )); then
-  zsh-defer eval "$(fnm env --use-on-cd)"
-fi
+(( $+commands[fnm] )) && zsh-defer eval "$(fnm env --use-on-cd)"
+# Set up fzf key bindings and fuzzy completion
+(( $+commands[fzf] )) && zsh-defer eval "$(fzf --zsh)"
+# zoxide (this code should appear near the end of this file)
+(( $+commands[zoxide] )) && zsh-defer eval "$(zoxide init zsh)"
 
 # jEnv
 if (( $+commands[jenv] )); then
   export PATH="$HOME/.jenv/bin:$PATH"
   zsh-defer eval "$(jenv init -)"
-fi
-
-# Set up fzf key bindings and fuzzy completion
-if (( $+commands[fzf] )); then
-  zsh-defer eval "$(fzf --zsh)"
-fi
-
-# zoxide (this code should appear near the end of this file)
-if (( $+commands[zoxide] )); then
-  zsh-defer eval "$(zoxide init zsh)"
 fi
 
 # Customise prompt
