@@ -247,3 +247,8 @@ prompt_end() {
 # Change comment highlight style
 typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[comment]='fg=magenta,bold'
+
+# Short aliases for common commands
+(( $+commands[lazygit] )) && alias lz="lazygit"
+(( $+commands[nvim] )) && alias v="nvim"
+(( $+commands[yazi] )) && alias y="yazi"
