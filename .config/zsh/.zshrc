@@ -157,6 +157,16 @@ source $ZSH/oh-my-zsh.sh
 # available on all POSIX systems.
 export SHORT_HOST="${HOST/.*/}"
 
+# PNPM
+export PNPM_HOME="$HOME/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+
+# ZVM (Zig Version Manager)
+export ZVM_PATH="$XDG_DATA_HOME/zvm"
+export ZVM_INSTALL="$ZVM_PATH/self"
+export PATH="$PATH:$ZVM_PATH/bin"
+export PATH="$PATH:$ZVM_INSTALL"
+
 # GPG may require passphrase every now and then - this line lets it know which
 # terminal to use to request the passphrase.
 export GPG_TTY=$(tty)
