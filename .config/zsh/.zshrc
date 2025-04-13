@@ -157,58 +157,6 @@ source $ZSH/oh-my-zsh.sh
 # available on all POSIX systems.
 export SHORT_HOST="${HOST/.*/}"
 
-# Host-specific variables
-case "$SHORT_HOST" in
-  taseen-macbook-work)
-    # TODO: Remove this switch case
-
-    # PNPM
-    export PNPM_HOME="$HOME/Library/pnpm"
-    export PATH="$PNPM_HOME:$PATH"
-
-    # Android
-    export ANDROID_HOME="$HOME/Library/Android/sdk"
-    export PATH="$PATH:$ANDROID_HOME/emulator"
-    export PATH="$PATH:$ANDROID_HOME/tools"
-    export PATH="$PATH:$ANDROID_HOME/tools/bin"
-    export PATH="$PATH:$ANDROID_HOME/platform-tools"
-
-    # Flutter requires `CHROME_EXECUTABLE` to develop for the web
-    export CHROME_EXECUTABLE="/Applications/Brave Browser.app/Contents/MacOS/Brave Browser"
-
-    # Added by Toolbox App
-    export PATH="$PATH:/usr/local/bin"
-
-    # Added by Docker Desktop
-    source "$HOME/.docker/init-zsh.sh" || true
-
-    # Added by Cargo
-    . "$HOME/.cargo/env"
-
-    # ZVM
-    export ZVM_PATH="$XDG_DATA_HOME/zvm"
-    export ZVM_INSTALL="$ZVM_PATH/self"
-    export PATH="$PATH:$ZVM_PATH/bin"
-    export PATH="$PATH:$ZVM_INSTALL"
-    ;;
-
-  taseen-macbook-m3)
-    # PNPM
-    export PNPM_HOME="$HOME/Library/pnpm"
-    export PATH="$PNPM_HOME:$PATH"
-
-    # ZVM
-    export ZVM_PATH="$XDG_DATA_HOME/zvm"
-    export ZVM_INSTALL="$ZVM_PATH/self"
-    export PATH="$PATH:$ZVM_PATH/bin"
-    export PATH="$PATH:$ZVM_INSTALL"
-    ;;
-
-  taseen-mint)
-    # Nothing here yet...
-    ;;
-esac
-
 # GPG may require passphrase every now and then - this line lets it know which
 # terminal to use to request the passphrase.
 export GPG_TTY=$(tty)
