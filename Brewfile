@@ -89,6 +89,8 @@ when "taseen-macbook-m3"
 
   # Compact TeX distribution as alternative to the full TeX Live / MacTeX
   cask "basictex"
+  # Replacement for Docker Desktop
+  cask "orbstack"
 end
 
 if install_osdev_tools then
