@@ -85,12 +85,6 @@ when "taseen-macbook-m3"
   # Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
   brew "oven-sh/bun/bun"
 
-  tap "koekeishiya/formulae"
-  # Simple hotkey-daemon for macOS.
-  brew "koekeishiya/formulae/skhd"
-  # A tiling window manager for macOS based on binary space partitioning.
-  brew "koekeishiya/formulae/yabai"
-
   # Compact TeX distribution as alternative to the full TeX Live / MacTeX
   cask "basictex"
 end
