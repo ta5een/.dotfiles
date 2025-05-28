@@ -171,6 +171,9 @@ export PATH="$PATH:$ZVM_INSTALL"
 # terminal to use to request the passphrase.
 export GPG_TTY=$(tty)
 
+# Go
+export GOPATH="$XDG_DATA_HOME/go"
+
 # Load rbenv in the shell
 (( $+commands[rbenv] )) && zsh-defer eval "$(rbenv init - zsh)"
 # fnm
