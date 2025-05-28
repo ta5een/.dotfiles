@@ -68,6 +68,8 @@ when "taseen-macbook-m3"
   brew "fnm"
   # Tools and libraries to manipulate images in many formats
   brew "imagemagick"
+  # Command-line, double-entry accounting tool
+  brew "ledger"
   # ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
   brew "libheif"
   # Fast and user friendly build system
