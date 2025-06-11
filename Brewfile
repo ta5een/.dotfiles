@@ -97,9 +97,10 @@ when "taseen-macbook-m3"
 when "taseen-macbook-work"
   # Load/unload environment variables based on $PWD
   brew "direnv"
+  # Set of tools to manage resources and applications hosted on Google Cloud
+  cask "google-cloud-sdk"
   # Replacement for Docker Desktop
   cask "orbstack"
-
 end
 
 if install_osdev_tools then

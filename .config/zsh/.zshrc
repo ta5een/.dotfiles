@@ -214,3 +214,11 @@ ZSH_HIGHLIGHT_STYLES[comment]='fg=magenta,bold'
 (( $+commands[lazygit] )) && alias lz="lazygit"
 (( $+commands[nvim] )) && alias v="nvim"
 (( $+commands[yazi] )) && alias y="yazi"
+
+GCLOUD_SDK_BASE_PATH="$(brew --prefix)/Caskroom/google-cloud-sdk"
+GCLOUD_LATEST_LINK="$GCLOUD_SDK_BASE_PATH/latest"
+GCLOUD_SDK_PATH="$GCLOUD_LATEST_LINK/google-cloud-sdk"
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f "$GCLOUD_SDK_PATH/path.zsh.inc" ]; then . "$GCLOUD_SDK_PATH/path.zsh.inc"; fi
+# The next line enables shell command completion for gcloud.
+if [ -f "$GCLOUD_SDK_PATH/completion.zsh.inc" ]; then . "$GCLOUD_SDK_PATH/completion.zsh.inc"; fi
