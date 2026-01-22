@@ -2,8 +2,8 @@
 
 [user]
 	name = Ta-Seen
-	email = taseen00.islam@gmail.com
-	signingkey = 2998BDA7B7028419
+	email = contact@taseen.dev
+	signingkey = DBCF5C1907BC4C33
 
 [core]
 	editor = nvim
