@@ -38,6 +38,8 @@ brew "rbenv"
 brew "ripgrep"
 # Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
+# Markup-based typesetting system
+brew "typst"
 # Command-line unarchiving tools supporting multiple formats
 brew "unar"
 # Check your $HOME for unwanted files and directories
