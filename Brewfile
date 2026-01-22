@@ -18,6 +18,8 @@ brew "gh"
 brew "git-delta"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
+# Handy way to save and run project-specific commands
+brew "just"
 # Powerful, lightweight programming language
 brew "lua"
 # Ambitious Vim-fork focused on extensibility and agility
